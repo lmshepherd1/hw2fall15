@@ -25,37 +25,49 @@
 #instructions specified in the assignment description to hand-in your work.
 
 def palindrome?(str)
-  # YOUR CODE HERE
+  @formatted_string = str.downcase.gsub(/[^A-Z0-9]/i, '')
+  @palidrome = @formatted_string == @formatted_string.reverse
 end
 
 def count_words(str)
-  # YOUR CODE HERE
+  @string = str.downcase
+  h = Hash.new(0)
+  @string.scan(/\b\w+\b/) do |w|
+    h[w] += 1
+  end
+  return h
 end
 
 
-#the code below this line will test your functions. 
-#You should remove everything below this line prior to submitting your file
+# #the code below this line will test your functions. 
+# #You should remove everything below this line prior to submitting your file
+# test_str = "A man, a plan, a canal -- Panama"
+
+# if palindrome? test_str
+#   puts test_str + " is a palindrome!"
+# else
+#   puts test_str + " is NOT a palindrome!"
+# end
+
+# test_str = "there goes the neighborhood"
+
+# if palindrome? test_str
+#   puts test_str + " is a palindrome!"
+# else
+#   puts test_str + " is NOT a palindrome!"
+# end
 
 
-test_str = "there goes the neighborhood"
+# test_str = "Madam, I'm Adam"
 
-if palindrome? test_str
-  puts test_str + " is a palindrome!"
-else
-  puts test_str + " is NOT a palindrome!"
-end
-
-
-test_str = "Madam, I'm Adam"
-
-if palindrome? test_str
-  puts test_str + " is a palindrome!"
-else
-  puts test_str + " is NOT a palindrome!"
-end
+# if palindrome? test_str
+#   puts test_str + " is a palindrome!"
+# else
+#   puts test_str + " is NOT a palindrome!"
+# end
 
 
-test_str = "The rent is due on the first day of the month unless the first day of the month falls on a Saturday or Sunday"
+# test_str = "The rent is due on the first day of the month unless the first day of the month falls on a Saturday or Sunday"
 
-word_count = count_words test_str
-puts word_count
+# word_count = count_words test_str
+# puts word_count

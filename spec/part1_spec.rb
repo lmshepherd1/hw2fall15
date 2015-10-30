@@ -20,4 +20,8 @@ describe "#count_words" do
   it "should return a Hash" do
     count_words("Testing").class.should == Hash
   end
+  
+  it "The counting method returns the correct counts" do
+    expect(count_words("i is smart! I is beautiful. I is important. ")).to eq({"i" => 3, "is" => 3, "smart" => 1, "beautiful" => 1, "important" => 1})
+  end
 end
